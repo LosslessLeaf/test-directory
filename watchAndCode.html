@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>Todo List</h1>
+
+        <button onclick="handlers.toggleAll()">Toggle All</button>
+        
+        <div>
+            <button onclick="handlers.addTodo()">Add Todo</button>
+            <input type="text" id="add-todo-input">
+        </div>
+        
+        <div>
+            <button onclick="handlers.changeTodo()">Change Todo</button>
+            <input id="change-todo-position-input" type="number">
+            <input id="change-todo-text-input" type="text">
+        </div>
+        
+        <div>
+            <button onclick="handlers.deleteTodo()">Delete Todo</button>
+            <input id="delete-todo-position-input" type="number">
+        </div>
+        
+        <div>
+            <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+            <input id="toggle-completed" type="number">
+        </div>
+        
+        <ul>
+        </ul>
+        
+        <script src="watchAndCode.js"></script>
+    </body>
+</html>
