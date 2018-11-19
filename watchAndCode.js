@@ -93,6 +93,7 @@ var view = {
     },
     createDeleteButton: function() {
         var deleteButton = document.createElement("button");
+        console.log("This item has been deleted", this.todos);
         return deleteButton;
     }
 };
