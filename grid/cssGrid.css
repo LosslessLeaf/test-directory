@@ -1,0 +1,34 @@
+body {
+    display: grid;
+    min-height: 100%;
+    grid-template-rows: 1fr 90px;
+    grid-template-areas: "main" "footer";
+}
+
+.aside {
+    grid-area: aside;
+    display: none;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (min-width: 600px) {
+    body {
+        grid-template-columns: 120px 1fr;
+        grid-template-areas: "aside main"
+                            "footer footer";
+        background-color: blue;
+    }
+    .aside {
+        display: block;
+    }
+}
