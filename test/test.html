@@ -1,17 +1,34 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-
-<head>
-    <title>Test File</title>
-    <link rel="stylesheet" href="test.css">
-</head>
-
-<body>
-    <div>Hotel</div>
-    <div>
-        <span>Astoria</span>
-    </div>
-
-</body>
-
+    <head>
+        <title>
+            This is the text that appears in the tab of your browser
+        </title>
+        <style>
+            h1 {
+                color:red;
+            }
+            #slogan {
+                color:green;
+            }
+            .rooms {
+                color:thistle;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="hotelname"></h1>
+        <h3 id="slogan">Where You Pay With Code!</h3>
+        <p>Code the night away, in our technology inspired rooms.</p>
+        
+        <h3 class="rooms">Rooms Available</h3>
+        <button onclick="hotel.roomList()">Show rooms</button>
+        <div id="rmsAvail"></div>
+        <br>
+        <h3 class="rooms">Rooms Booked</h3>
+        <div id="rmBooked"></div>
+        <button onclick="hotel.bookArandomroom();">Book A Room</button>
+        <button onclick="hotel.refreshrooms();">Update Rooms</button>
+    </body>
+    <script src="test.js"></script>
 </html>
