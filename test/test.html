@@ -1,34 +1,42 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>
-            This is the text that appears in the tab of your browser
-        </title>
         <style>
-            h1 {
-                color:red;
+            body {
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                
             }
-            #slogan {
-                color:green;
+            #container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
             }
-            .rooms {
-                color:thistle;
+            
+            .funbuttonatag {
+                all:unset;
             }
         </style>
+             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title id="venue.hotelname"></title>
     </head>
     <body>
-        <h1 id="hotelname"></h1>
-        <h3 id="slogan">Where You Pay With Code!</h3>
-        <p>Code the night away, in our technology inspired rooms.</p>
-        
-        <h3 class="rooms">Rooms Available</h3>
-        <button onclick="hotel.roomList()">Show rooms</button>
-        <div id="rmsAvail"></div>
-        <br>
-        <h3 class="rooms">Rooms Booked</h3>
-        <div id="rmBooked"></div>
-        <button onclick="hotel.bookArandomroom();">Book A Room</button>
-        <button onclick="hotel.refreshrooms();">Update Rooms</button>
-    </body>
+        <div id="container" class="dropdown">
+            <button onclick="venue.Displayseats();" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Seats Available
+            </button>
+            <div class="dropdown-menu"  id="seatsAvailo" aria-labelledby="dropdownMenuButton">
+            </div>
+        </div>
+    <br>
+    <!--REMEMBER TO PUT BRETT'S "Venue.js" BACK-->
     <script src="test.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
 </html>
