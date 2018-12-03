@@ -1,93 +1,49 @@
-var hotel = {
-    name: "CareerDevs Hotel",
-    rating: 5.0,
-    roomrate: 325.00,
-    roomNumbers: ["101", "102", "103", "104", "105", "106", "107"],
-    roomNumbersBooked: [],
-    roomType: "Queen",
-    roomsavailable: function(roomNumbers, roomNumbersBooked) {
-        return this.roomNumbers.length - this.roomNumbersBooked.length;
+var venue = {
+    name: "Paul Wears Two Left Shoes",
+    seatsAvail: ["100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113"],
+    bookedSeats: [],
+    displaySeats: function() {
+        console.log(this.seatsAvail.length - this.bookedSeats.length + " seats available.");
     },
+    Displayseats: function() {
+        var seatsToBook = "";
+        for (var i = 0; i < venue.seatsAvail.length; i++) {
+            //need to escape quotes on the following line, research escaping characters and quotes especially
+            seatsToBook += "<button class='dropdown-item funbuttonatag seat' onclick='venue.SeatAvails();' value=\'" + venue.seatsAvail[i] + "\'>" + venue.seatsAvail[i] + "</button><br>";
+        }
+        document.getElementById("seatsAvailo").innerHTML = seatsToBook;
+    },
+    SeatAvails: function() {
+        const classname = Array.from(document.getElementsByClassName("seat"));
 
-    numberOfRoomsBooked: function() {
-        return this.roomNumbersBooked.length;
-    },
+        // for(const c of classname) {
+        //     c.addEventListener("click", function() {
+        //         alert(c.value);
+        //     }, false);
+        // }
+        // for (var i = 0; i < classname.length; i++) {
+        //     alert(classname[i]);
 
-    numberOfRooms: function() {
-        return this.roomNumber.length + this.roomNumbersBooked.length;
-    },
+        //     classname[i].addEventListener('click', function() {
+        //         alert(classname[i].value);
+        //     }, false);
+        // }
 
-    bookAroom: function(roomNumberReq) {
-        if (this.roomsavailable() > 0) {
-            for (let i = 0; i < this.roomNumbers.length; i++) {
-                if (this.roomNumbers[i] == roomNumberReq) {
-                    this.roomNumbersBooked = this.roomNumbers.splice(i, 1).concat(this.roomNumbersBooked);
-                    console.log(this.roomNumbersBooked);
-                    return;
-                }
-                else {
-                    console.log("Not a valid Room #");
-                }
 
-            }
+        // var attribute = this.getAttribute("data-myattribute");
+        // alert(attribute);
+        var alertVal = function() {
+                alert(classname[i].value);
         }
-        else {
-            console.log("No rooms Available");
+        
+        for(let i = 0; i < classname.length; i++) {
+            classname[i].addEventListener('click', alertVal);
         }
-    },
-    bookArandomroom: function() {
-        if (this.roomsavailable() > 0) {
-            var selectedroom = this.roomNumbers[Math.floor(Math.random() * this.roomNumbers.length)];
-            for (let i = 0; i < this.roomNumbers.length; i++) {
-                if (this.roomNumbers[i] == selectedroom) {
-                    this.roomNumbersBooked = this.roomNumbers.splice(i, 1).concat(this.roomNumbersBooked);
-                    console.log(this.roomNumbersBooked);
-                    return;
-                }
-            }
-        }
-        else("No Rooms Available");
-    },
-    bookArandomroomindex: function() {
-        if (this.roomsavailable() > 0) {
-            var selectedroom = this.roomNumbers[Math.floor(Math.random() * this.roomNumbers.length)];
-            this.roomNumbersBooked = this.roomNumbers.splice(this.roomNumbers.indexOf(selectedroom), 1).concat(this.roomNumbersBooked);
-            console.log(this.roomNumbersBooked);
-            return;
-        }
-    },
-    checkoutofroom: function() {
-        if (this.roomNumbersBooked.length > 0) {
-            this.roomNumbersBooked.pop()
-            console.log(this.roomNumbersBooked)
-        }
-        else {
-            console.log("No Rooms Booked")
-        }
-    },
-    roomList: function() {
-        var hotelroomsafvaa = `<select id="rmavail">`;
-
-        for (var i = 0; i < hotel.roomNumbers.length; i++) {
-            hotelroomsafvaa += `<option value="${hotel.roomNumbers[i]}"> ${hotel.roomNumbers[i]} </option>`;
-        }
-        hotelroomsafvaa += `</select>`;
-        document.getElementById("rmsAvail").innerHTML = hotelroomsafvaa;
-    },
-    refreshrooms: function() {
-        for (let i = 0; i < hotel.roomNumbers.length; i++) {
-            if (document.getElementById("rmavail").value === hotel.roomNumbers[i]) {
-                hotel.roomNumbers.splice(i, 1);
-            }
-        }
-        var hotelroomsafvaa = `<select id="rmavail">`;
-
-        for (var i = 0; i < hotel.roomNumbers.length; i++) {
-            hotelroomsafvaa += `<option value="${hotel.roomNumbers[i]}">${hotel.roomNumbers[i]}</option>`;
-        }
-        hotelroomsafvaa += `</select>`;
-        document.getElementById("rmsAvail").innerHTML = hotelroomsafvaa;
-
+        // Array.from(classname).forEach(function(element) {
+        //     element.addEventListener('click', function() {
+        //         alert(element.value);
+        //     });
+        // });
 
 
     }
