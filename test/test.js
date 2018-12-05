@@ -1,50 +1,75 @@
-var venue = {
-    name: "Paul Wears Two Left Shoes",
-    seatsAvail: ["100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113"],
-    bookedSeats: [],
-    displaySeats: function() {
-        console.log(this.seatsAvail.length - this.bookedSeats.length + " seats available.");
-    },
-    Displayseats: function() {
-        var seatsToBook = "";
-        for (var i = 0; i < venue.seatsAvail.length; i++) {
-            //need to escape quotes on the following line, research escaping characters and quotes especially
-            seatsToBook += "<button class='dropdown-item funbuttonatag seat' onclick='venue.SeatAvails();' value=\'" + venue.seatsAvail[i] + "\'>" + venue.seatsAvail[i] + "</button><br>";
+function sumFibs(num) {
+    var fibs = [];
+    var firstFib = 1;
+    var middleFib = 1;
+    var trailingFib = 0;
+    
+    var oddFibs = [];
+    for (let i = 0; i < num; i++) {
+        if(i === 0 || i === 1) {
+            fibs.push(firstFib);
+        } else {
+            trailingFib = firstFib + middleFib;
+            
+            firstFib = middleFib;
+            middleFib = trailingFib;
+            
+            fibs.push(trailingFib);
         }
-        document.getElementById("seatsAvailo").innerHTML = seatsToBook;
-    },
-    SeatAvails: function() {
-        const classname = Array.from(document.getElementsByClassName("seat"));
-
-        // for(const c of classname) {
-        //     c.addEventListener("click", function() {
-        //         alert(c.value);
-        //     }, false);
-        // }
-        // for (var i = 0; i < classname.length; i++) {
-        //     alert(classname[i]);
-
-        //     classname[i].addEventListener('click', function() {
-        //         alert(classname[i].value);
-        //     }, false);
-        // }
-
-
-        // var attribute = this.getAttribute("data-myattribute");
-        // alert(attribute);
-        var alertVal = function() {
-                alert(classname[i].value);
-        }
-        
-        for(let i = 0; i < classname.length; i++) {
-            classname[i].addEventListener('click', alertVal);
-        }
-        // Array.from(classname).forEach(function(element) {
-        //     element.addEventListener('click', function() {
-        //         alert(element.value);
-        //     });
-        // });
-
 
     }
-};
+    
+    console.log(fibs);
+    
+    for(let i = 0; i <= fibs.length; i++) {
+        if((fibs[i] === 1 || fibs[i] % 2 !== 0) && fibs[i] <= num) {
+            oddFibs.push(fibs[i]);
+        }
+    }
+    
+    console.log(oddFibs);
+    
+    var sum = 0;
+    
+    for(let i = 0; i < oddFibs.length; i++) {
+        sum += oddFibs[i];
+    }
+    
+    console.log(sum);
+    return sum;
+}
+
+sumFibs(10);
+
+
+
+
+
+// Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+
+// The first two numbers in the Fibonacci sequence are 1 and 1. Every additional number in the sequence is the sum of the two previous numbers. The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
+
+// For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
+
+
+
+document.getElementById("venueName").innerText = venue.name;
+document.getElementById("slogan").innerText = "Where you'll find the best tickets!";
+
+
+
+// function frankenSplice(arr1, arr2, n) {
+//     for(let i = 0; i < arr1.length; i++) {
+//         console.log(arr1[i]);
+        
+//         arr[i]
+        
+//         arr2.splice(n, )
+//     }
+
+
+
+// }
+
+
+// frankenSplice([1, 2, 3], [4, 5], 1);
