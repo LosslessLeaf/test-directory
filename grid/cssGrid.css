@@ -1,21 +1,22 @@
 body {
+    font-size: 16px;
     display: grid;
     min-height: 100%;
     grid-template-rows: 1fr 90px;
     grid-template-areas: "main" "footer";
 }
 
-.aside {
-    grid-area: aside;
-    display: none;
-}
-
-.main {
+main {
     grid-area: main;
 }
 
-.footer {
+footer {
     grid-area: footer;
+}
+
+.aside {
+    grid-area: aside;
+    display: none;
 }
 
 

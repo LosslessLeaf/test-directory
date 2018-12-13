@@ -4,3 +4,8 @@ body {
     background-color: #6a89cc;
 }
 
+#hotelname {
+    background-color: black;
+    color: white;
+    padding: 25px;
+}
