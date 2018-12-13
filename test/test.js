@@ -32,7 +32,6 @@ var hotel = {
         for (let i = 0; i < this.roomsBooked.length; i++) {
             if (document.getElementById("roomToBook").value == this.roomsBooked[i]) {
                 this.roomNumbers.push(this.roomsBooked.splice(i, 1).toString());
-                alert(this.roomNumbers);
                 document.getElementById("roomsAvail").innerText = this.roomNumbers;
                 this.refreshRooms();
                 this.bookedRoomsRefresh();
