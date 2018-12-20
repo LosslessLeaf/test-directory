@@ -44,5 +44,11 @@ var hotel = {
     //         if(this.roomNumbers[i])
     //     }
     // }
+    
+    
+    
+    
+    
+    
 };
 
