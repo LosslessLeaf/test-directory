@@ -38,12 +38,12 @@ var hotel = {
             }
         }
     },
-    // reorderRooms: function() {
-    //     alert(this.roomNumbers);
-    //     for(let i = 0; i < this.roomNumbers.length; i++) {
-    //         if(this.roomNumbers[i])
-    //     }
-    // }
+    reorderRooms: function() {
+        alert(this.roomNumbers);
+        for(let i = 0; i < this.roomNumbers.length; i++) {
+            // if(this.roomNumbers[i])
+        }
+    }
     
     
     
