@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    
+}
+
+#container {
+    width: 70%;
+    height: 90%;
+    margin: 0 auto;
+    margin-top: 25px;
+    border: 2px solid black;
+}
+
+#form-main {
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+    
+}
+
+#form-title {
+    text-align: center;
+    color: orange;
+    padding: 5px 0;
+    width: 100%;
+    
+}
+
+#form-img {
+    width: 100%;
+    height: 100px;
+}
+
+#form-img > img {
+    max-height: 100%;
+    width: 100%;
+}
+form {
+    text-align: center;
+}
+
+#username-label {
+    width: 25%;
+    display: inline-block;
+    margin: 20px 0;
+}
+
+#username {
+    width: 65%;
+    display: inline-block;
+    margin: 20px 0;
+}
+
+#password-label {
+    width: 25%;
+    display: inline-block;
+    margin: 20px 0;
+}
+
+#password {
+    width: 65%;
+    display: inline-block;
+    margin: 20px 0;
+}
+
+#submit {
+    display: inline-block;
+    width: 40%;
+    margin: 0 auto;
+    padding: 10px;
+}
